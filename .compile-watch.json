@@ -1,0 +1,12 @@
+{
+  "files": {
+    "scss/style.scss": {
+      "output": "css/style.css",
+      "format": "scss"
+    }
+  },
+
+  "autowatch": [
+    "scss/style.scss"
+  ]
+}
