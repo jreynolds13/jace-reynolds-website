@@ -1,37 +1,48 @@
+@supports (display: grid) {
+
 ////////////////////////////////////////
 // breakpoint variables               //
 ////////////////////////////////////////
 
-$small-screen:           480px;
-$medium-screen:          768px;
-// $large-screen:        1440px;
+$small-screen:       640px;
+$medium-screen:      1024px;
+$large-screen:       1440px;
 
-$break-small:            "screen and (max-width: #{$small-screen})";
-$break-medium:           "screen and (min-width: #{$small-screen + 1}) and (max-width: #{$medium-screen})";
-$break-large:            "screen and (min-width: #{$medium-screen + 1})";
+$break-small:
+  "screen and (max-width: #{$small-screen})";
+$break-medium:
+  "screen and (min-width: #{$small-screen + 1}) and (max-width: #{$medium-screen})";
+$break-medium-up:
+  "screen and (min-width: #{$small-screen + 1})";
+$break-large:
+  "screen and (min-width: #{$medium-screen + 1})";
+
+$grid: "(display: grid)";
 
 ////////////////////////////////////////
 // style variables                    //
 ////////////////////////////////////////
 
-$color-1:                #f6f4ff;
-$color-2:                #070063;
-$color-3:                #5900ff;
-$selection-bg:           #b5acff;
+$color-1:            #f6f4ff;
+$color-2:            #070063;
+$color-3:            #5900ff;
+$selection-bg:       #b5acff;
 
-$font-stack-heading:     'Overpass', "Trebuchet MS", Tahoma, sans-serif;
-$font-stack-copy:        'Overpass Mono', Consalas, monaco, 'Lucida Console', sans-serif;
+$font-stack-heading:
+  'Overpass', "Trebuchet MS", Tahoma, sans-serif;
+$font-stack-copy:
+  'Overpass Mono', Consalas, monaco, 'Lucida Console', sans-serif;
 
 ////////////////////////////////////////
 // @mixins                            //
 ////////////////////////////////////////
 
-@mixin heading {
+@mixin font-heading {
   font-family: $font-stack-heading;
   font-style: italic;
 }
 
-@mixin copy {
+@mixin font-copy {
   font-family: $font-stack-copy;
   font-weight: 400;
 }
@@ -44,11 +55,14 @@ html {
   background: $color-1;
 }
 
+// highlighting
 *::-webkit-selection {background-color: $selection-bg}
 *::-moz-selection {background-color: $selection-bg;}
 *::selection {background-color: $selection-bg;}
 
-body {color: $color-2;}
+body {
+  color: $color-2;
+}
 
 ul {
   list-style: square inside none;
@@ -81,27 +95,35 @@ a {
 ////////////////////////////////////////
 
 div.col-flex-container {
-  display: grid;
-  grid-gap: 1rem;
-  @media #{$break-medium} {
-    grid-template-columns: auto auto;
-    grid-auto-columns: min-content;
-  }
-  @media #{$break-large} {
-    grid-template-columns: auto auto;
-    grid-auto-columns: min-content;
+  > div {
+    margin-bottom: 1rem;
   }
 }
 
-div.col-2-container {
-  display: grid;
-  grid-gap: 1rem;
-  @media #{$break-medium} {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-columns: min-content;
+@supports (display: grid) {
+  div.col-flex-container {
+    > div {
+      margin-bottom: 1rem;
+    }
+
+    @media #{$break-medium-up} {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: auto auto;
+      grid-auto-columns: min-content;
+      > div {
+        margin-bottom: 0;
+      }
+    }
   }
-  @media #{$break-large} {
-    grid-template-columns: 1fr 1fr;
+
+  div.col-2-container {
+    @media #{$break-medium-up} {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-columns: min-content;
+    }
   }
 }
 
@@ -109,37 +131,32 @@ div.col-2-container {
 // headings                           //
 ////////////////////////////////////////
 
-
-h1, h2, h3, h4, h5, h6   {
-                          @include heading;
-                          text-transform: uppercase;
-                          margin-bottom: 1rem;
-                         }
-
-h1                       {font-weight: 900;}
-h2, h3                   {font-weight: 700;}
-h4                       {font-weight: 600;}
-
-// @media #{$break-small} {
-//   h1, h2, h3, h4, h5, h6 {
-//     margin-bottom: .25rem;
-//   }
-// }
-//
-// @media #{$break-medium} {
-//   h1, h2, h3, h4, h5, h6 {
-//     margin-bottom: .35rem;
-//   }
-// }
-
-@media #{$break-small} {
-  h1 {font-size: 2rem;}
-  h2 {font-size: 1.424rem;}
-  h3 {font-size: 1.266rem;}
-  h4 {font-size: 1.125rem;}
-  h5 {font-size: 1rem;}
-  h6 {font-size: 1rem;}
+h1 {
+  @include font-heading;
 }
+
+h2, h3, h4, h5, h6     {
+                        @include font-heading;
+                        text-transform: uppercase;
+                       }
+
+h2, h3                 {
+                        margin-bottom: 1rem;
+                       }
+
+h4, h5, h6             {
+                        margin-bottom: .5rem;
+                       }
+
+h1, h2, h3             {font-weight: 700;}
+h4                     {font-weight: 600;}
+
+h1 {font-size: 2rem;}
+h2 {font-size: 1.424rem;}
+h3 {font-size: 1.266rem;}
+h4 {font-size: 1.125rem;}
+h5 {font-size: 1rem;}
+h6 {font-size: 1rem;}
 
 @media #{$break-medium} {
   h1 {font-size: 2.25rem;}
@@ -164,15 +181,9 @@ h4                       {font-weight: 600;}
 ////////////////////////////////////////
 
 p, span, div, ul {
-  @include copy;
+  @include font-copy;
   font-size: 1rem;
   line-height: 1.5;
-}
-
-@media #{$break-medium} {
-  p, span, div, ul {
-    line-height: 1.5;
-  }
 }
 
 ////////////////////////////////////////
@@ -181,10 +192,16 @@ p, span, div, ul {
 
 html {
   height: 100%;
+  font-size: 16px;
 }
 
 body {
-  display: grid;
+  display: flex;
+
+  @supports (display: grid) {
+    display: grid;
+  }
+
   justify-content: center;
   height: 100%;
 }
@@ -198,23 +215,44 @@ div.main {
   max-width: 1024px;
   padding: 1.25rem 1rem 0 1rem;
 
+  section.header {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      width: 100px;
+      margin-right: 1.5rem;
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
   section.body {
-    display: grid;
-    grid-auto-rows: min-content;
-    grid-gap: 2rem;
+    @supports (display: grid;) {
+      @media #{$break-medium-up} {
+        display: grid;
+        grid-auto-rows: min-content;
+        grid-gap: 2rem;
+      }
+      @media #{$break-medium} {
+        grid-template-columns: 100%;
+      }
+      @media #{$break-large} {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
-    @media #{$break-small} {
-      grid-template-columns: 100%;
-    }
-    @media #{$break-medium} {
-      grid-template-columns: 100%;
-    }
-    @media #{$break-large} {
-      grid-template-columns: 1fr 1fr;
+    
+
+    section h3 {
+      border-bottom: 2px solid;
     }
 
-    section h3           {border-bottom: 2px solid;}
-    // section h4        {border-bottom: 1.25px solid;}
+    > section {
+      margin-bottom: 1rem;
+    }
 
     section.contact {
       div.social-links {
@@ -241,4 +279,5 @@ div.main {
       text-align: center;
     }
   }
+}
 }
