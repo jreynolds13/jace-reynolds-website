@@ -1,4 +1,3 @@
-@supports (display: grid) {
 
 ////////////////////////////////////////
 // breakpoint variables               //
@@ -10,6 +9,8 @@ $large-screen:       1440px;
 
 $break-small:
   "screen and (max-width: #{$small-screen})";
+$break-small-up:
+  "screen and (min-width: 0)";
 $break-medium:
   "screen and (min-width: #{$small-screen + 1}) and (max-width: #{$medium-screen})";
 $break-medium-up:
@@ -230,21 +231,23 @@ div.main {
   }
 
   section.body {
-    @supports (display: grid;) {
-      @media #{$break-medium-up} {
-        display: grid;
-        grid-auto-rows: min-content;
-        grid-gap: 2rem;
-      }
+    @supports (display: grid) {
+
       @media #{$break-medium} {
         grid-template-columns: 100%;
       }
       @media #{$break-large} {
         grid-template-columns: 1fr 1fr;
       }
-    }
 
-    
+      // &.proj-body {
+      //   @media #{$break-small-up} {
+      //     display: grid;
+      //     grid-template-columns: 100%;
+      //     grid-gap: 2rem;
+      //   }
+      // }
+    }
 
     section h3 {
       border-bottom: 2px solid;
@@ -271,6 +274,25 @@ div.main {
     section.work {
 
     }
+
+    &.proj-body {
+      section.proj-img {
+        @supports (display: grid) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 2rem;
+
+          img {
+            margin-bottom: 0 !important;
+          }
+        }
+
+        img {
+          max-width: 100%;
+          margin-bottom: 2rem;
+        }
+      }
+    }
   }
 
   section.footer {
@@ -279,5 +301,4 @@ div.main {
       text-align: center;
     }
   }
-}
 }

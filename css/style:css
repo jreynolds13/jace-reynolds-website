@@ -173,13 +173,6 @@ div.main {
     margin-bottom: 1rem; }
   div.main section.body section.contact div.social-links {
     font-size: 1.125rem; }
-  @supports (display: grid) {
-    div.main section.body.proj-body section.proj-img {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 2rem; }
-      div.main section.body.proj-body section.proj-img img {
-        margin-bottom: 0 !important; } }
   div.main section.body.proj-body section.proj-img img {
     max-width: 100%;
     margin-bottom: 2rem; }
@@ -189,4 +182,4 @@ div.main {
       div.main section.footer {
         text-align: center; } }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style:css.map */
