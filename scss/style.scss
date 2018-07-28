@@ -220,6 +220,15 @@ div.main {
     display: flex;
     align-items: center;
 
+    a {
+      display: flex;
+      align-items: center;
+
+      &:link, &:visited {
+        text-decoration: none;
+      }
+    }
+
     .logo {
       width: 100px;
       margin-right: 1.5rem;
@@ -232,6 +241,8 @@ div.main {
 
   section.body {
     @supports (display: grid) {
+      display: grid;
+      grid-gap: 2rem;
 
       @media #{$break-medium} {
         grid-template-columns: 100%;
@@ -240,13 +251,13 @@ div.main {
         grid-template-columns: 1fr 1fr;
       }
 
-      // &.proj-body {
-      //   @media #{$break-small-up} {
-      //     display: grid;
-      //     grid-template-columns: 100%;
-      //     grid-gap: 2rem;
-      //   }
-      // }
+      &.proj-body {
+        @media #{$break-small-up} {
+          display: grid;
+          grid-template-columns: 100%;
+          grid-gap: 2rem;
+        }
+      }
     }
 
     section h3 {
@@ -281,6 +292,10 @@ div.main {
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-gap: 2rem;
+
+          @media #{$break-small} {
+            grid-template-columns: 100%;
+          }
 
           img {
             margin-bottom: 0 !important;
