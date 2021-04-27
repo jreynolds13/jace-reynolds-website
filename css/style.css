@@ -163,7 +163,8 @@ div.main {
   @supports (display: grid) {
     div.main section.body {
       display: grid;
-      grid-gap: 2rem; }
+      grid-gap: 2rem;
+      grid-auto-rows: 1fr; }
       @media screen and (min-width: 641px) and (max-width: 1024px) {
         div.main section.body {
           grid-template-columns: 100%; } }
