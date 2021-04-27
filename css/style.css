@@ -153,6 +153,8 @@ div.main {
       align-items: center; }
       div.main section.header a:link, div.main section.header a:visited {
         text-decoration: none; }
+      div.main section.header a:hover .logo svg, div.main section.header a:active .logo svg, div.main section.header a:focus .logo svg {
+        fill: #5900ff; }
     div.main section.header .logo {
       width: 100px;
       margin-right: 1.5rem; }

@@ -227,6 +227,14 @@ div.main {
       &:link, &:visited {
         text-decoration: none;
       }
+
+      &:hover, &:active, &:focus {
+        .logo {
+          svg {
+            fill: $color-3;
+          }
+        }
+      }
     }
 
     .logo {
