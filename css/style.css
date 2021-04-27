@@ -198,7 +198,7 @@ div.main {
   div.main section.footer {
     padding: .5rem 0;
     display: flex;
-    align-content: flex-end; }
+    align-items: flex-end; }
     @media screen and (min-width: 1025px) {
       div.main section.footer {
         justify-content: center; } }

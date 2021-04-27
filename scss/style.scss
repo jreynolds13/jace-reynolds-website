@@ -317,7 +317,7 @@ div.main {
   section.footer {
     padding: .5rem 0;
     display: flex;
-    align-content: flex-end;
+    align-items: flex-end;
     @media #{$break-large} {
       justify-content: center;
     }
