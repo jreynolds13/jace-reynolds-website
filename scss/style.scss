@@ -281,7 +281,7 @@ div.main {
     .skills {
       > div {
         display: grid;
-        grid-auto-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
