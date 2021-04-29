@@ -185,7 +185,16 @@ p, span, div, ul {
   @include font-copy;
   font-size: 1rem;
   line-height: 1.5;
+  margin-bottom: 0;
+}
 
+div {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+p, span, ul {
   &:not(:last-child) {
     margin-bottom: .5rem;
   }
@@ -292,14 +301,19 @@ div.main {
 
     .skills {
       > div {
-
         @media screen and (min-width: 550px) {
           @supports (display: grid) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 1.5rem;
+          }
+        }
 
-            ul {
+        ul {
+          margin-bottom: 1rem;
+
+          @media screen and (min-width: 550px) {
+            @supports (display: grid) {
               margin-bottom: 0;
             }
           }

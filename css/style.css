@@ -123,9 +123,14 @@ p, span, div, ul {
   font-family: "Overpass Mono", Consalas, monaco, "Lucida Console", sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.5; }
-  p:not(:last-child), span:not(:last-child), div:not(:last-child), ul:not(:last-child) {
-    margin-bottom: .5rem; }
+  line-height: 1.5;
+  margin-bottom: 0; }
+
+div:not(:last-child) {
+  margin-bottom: 1rem; }
+
+p:not(:last-child), span:not(:last-child), ul:not(:last-child) {
+  margin-bottom: .5rem; }
 
 html {
   height: 100%;
@@ -193,7 +198,11 @@ div.main {
       div.main section.body .skills > div {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.5rem; }
+        grid-gap: 1.5rem; } } }
+  div.main section.body .skills > div ul {
+    margin-bottom: 1rem; }
+    @media screen and (min-width: 550px) {
+      @supports (display: grid) {
         div.main section.body .skills > div ul {
           margin-bottom: 0; } } }
   div.main section.body .work ul {
