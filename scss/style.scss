@@ -286,10 +286,24 @@ div.main {
       border-bottom: 2px solid;
     }
 
+    ul {
+      margin-bottom: 0;
+    }
+
     .skills {
       > div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+
+        @media screen and (min-width: 550px) {
+          @supports (display: grid) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.5rem;
+          }
+        }
+
+        ul {
+
+        }
       }
     }
 
