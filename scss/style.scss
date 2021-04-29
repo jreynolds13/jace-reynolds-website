@@ -1,4 +1,3 @@
-
 ////////////////////////////////////////
 // breakpoint variables               //
 ////////////////////////////////////////
@@ -322,11 +321,11 @@ div.main {
         ul {
           &:not(:last-child) {
             margin-bottom: 1rem;
-          }
 
-          @media screen and (min-width: 550px) {
-            @supports (display: grid) {
-              margin-bottom: 0;
+            @media screen and (min-width: 550px) {
+              @supports (display: grid) {
+                margin-bottom: 0;
+              }
             }
           }
         }
