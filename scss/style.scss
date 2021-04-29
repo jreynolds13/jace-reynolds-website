@@ -381,6 +381,8 @@ div.main {
   }
 
   .footer {
+    display: flex;
+    align-items: flex-end;
     @media #{$break-large} {
       justify-content: center;
     }
