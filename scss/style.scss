@@ -232,7 +232,6 @@ div.main {
 
     @media #{$break-large} {
       max-width: 1000px;
-      max-height: 1500px;
       grid-auto-rows: 1fr auto 1fr;
     }
   }
