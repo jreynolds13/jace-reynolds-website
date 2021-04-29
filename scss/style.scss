@@ -255,7 +255,7 @@ div.main {
       @media #{$break-medium} {
         grid-template-columns: 100%;
       }
-      
+
       @media #{$break-large} {
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: 1fr;
@@ -286,18 +286,6 @@ div.main {
           font-size: 1.125rem;
         }
       }
-    }
-
-    section.bio {
-
-    }
-
-    section.tools {
-
-    }
-
-    section.work {
-
     }
 
     &.proj-body {
