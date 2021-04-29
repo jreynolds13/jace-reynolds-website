@@ -139,7 +139,6 @@ html {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100%; }
   @supports (display: grid) {
     body {
@@ -161,21 +160,22 @@ div.main {
   @supports not (display: grid) {
     div.main > *:not(:last-child) {
       margin-bottom: 2rem; } }
-  div.main section.header {
+  div.main .header {
     display: flex;
     align-items: flex-start; }
-    div.main section.header a {
+    div.main .header a {
       display: flex;
       align-items: center; }
-      div.main section.header a:link, div.main section.header a:visited {
+      div.main .header a:link, div.main .header a:visited {
         text-decoration: none; }
-      div.main section.header a:hover .logo svg, div.main section.header a:active .logo svg, div.main section.header a:focus .logo svg {
+      div.main .header a:hover .logo svg, div.main .header a:active .logo svg, div.main .header a:focus .logo svg {
         fill: #5900ff; }
-    div.main section.header .logo {
+    div.main .header .logo {
       width: 100px;
       margin-right: 1.5rem; }
-    div.main section.header h1 {
-      margin-bottom: 0; }
+    div.main .header h1 {
+      margin-bottom: 0;
+      line-height: 1; }
   @supports (display: grid) {
     div.main section.body {
       display: grid;
@@ -234,10 +234,6 @@ div.main {
   div.main section.body.proj-body section.proj-img img {
     max-width: 100%;
     margin-bottom: 2rem; }
-  div.main section.footer {
-    padding: .5rem 0;
-    display: flex;
-    align-items: flex-end; }
-    @media screen and (min-width: 1025px) {
-      div.main section.footer {
-        justify-content: center; } }
+  @media screen and (min-width: 1025px) {
+    div.main .footer {
+      justify-content: center; } }

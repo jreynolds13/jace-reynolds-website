@@ -216,7 +216,6 @@ body {
   }
 
   justify-content: center;
-  align-items: center;
   height: 100%;
 }
 
@@ -244,7 +243,7 @@ div.main {
     }
   }
 
-  section.header {
+  .header {
     display: flex;
     align-items: flex-start;
 
@@ -272,6 +271,7 @@ div.main {
 
     h1 {
       margin-bottom: 0;
+      line-height: 1;
     }
   }
 
@@ -380,10 +380,7 @@ div.main {
     }
   }
 
-  section.footer {
-    padding: .5rem 0;
-    display: flex;
-    align-items: flex-end;
+  .footer {
     @media #{$break-large} {
       justify-content: center;
     }
