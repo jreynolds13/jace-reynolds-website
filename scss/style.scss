@@ -341,8 +341,9 @@ div.main {
 
     .contact {
       ul.social-links {
-        font-size: 1.25rem;
         list-style: none;
+        font-size: 1.25rem;
+        line-height: 1;
 
         @media #{$break-large} {
           font-size: 1.125rem;

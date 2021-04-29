@@ -212,8 +212,9 @@ div.main {
   div.main section.body .work ul {
     margin-bottom: 0; }
   div.main section.body .contact ul.social-links {
+    list-style: none;
     font-size: 1.25rem;
-    list-style: none; }
+    line-height: 1; }
     @media screen and (min-width: 1025px) {
       div.main section.body .contact ul.social-links {
         font-size: 1.125rem; } }
