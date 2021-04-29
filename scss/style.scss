@@ -339,12 +339,17 @@ div.main {
       }
     }
 
-    section.contact {
-      div.social-links {
+    .contact {
+      ul.social-links {
         font-size: 1.25rem;
+        list-style: none;
 
         @media #{$break-large} {
           font-size: 1.125rem;
+        }
+
+        li {
+          display: inline-block;
         }
       }
     }

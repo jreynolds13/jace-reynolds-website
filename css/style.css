@@ -211,11 +211,14 @@ div.main {
         margin-bottom: 0; } } }
   div.main section.body .work ul {
     margin-bottom: 0; }
-  div.main section.body section.contact div.social-links {
-    font-size: 1.25rem; }
+  div.main section.body .contact ul.social-links {
+    font-size: 1.25rem;
+    list-style: none; }
     @media screen and (min-width: 1025px) {
-      div.main section.body section.contact div.social-links {
+      div.main section.body .contact ul.social-links {
         font-size: 1.125rem; } }
+    div.main section.body .contact ul.social-links li {
+      display: inline-block; }
   @supports (display: grid) {
     div.main section.body.proj-body section.proj-img {
       display: grid;
