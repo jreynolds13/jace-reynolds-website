@@ -211,6 +211,8 @@ div.main {
         margin-bottom: 0; } } }
   div.main section.body .work ul {
     margin-bottom: 0; }
+  div.main section.body .contact > *:not(:last-child) {
+    margin-bottom: .25rem; }
   div.main section.body .contact ul.social-links {
     list-style: none;
     font-size: 1.25rem;

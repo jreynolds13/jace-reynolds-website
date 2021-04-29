@@ -340,6 +340,10 @@ div.main {
     }
 
     .contact {
+      > *:not(:last-child) {
+        margin-bottom: .25rem;
+      }
+
       ul.social-links {
         list-style: none;
         font-size: 1.25rem;
