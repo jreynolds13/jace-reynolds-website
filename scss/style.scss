@@ -216,7 +216,7 @@ div.main {
   max-width: 800px;
   padding: 1.25rem 1rem 1.25rem 1rem;
 
-  @media #{$break-medium-up} {
+  @media #{$break-large} {
     max-width: 1024px;
   }
 

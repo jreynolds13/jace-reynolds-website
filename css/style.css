@@ -145,7 +145,7 @@ div.main {
   grid-gap: 2rem;
   max-width: 800px;
   padding: 1.25rem 1rem 1.25rem 1rem; }
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 1025px) {
     div.main {
       max-width: 1024px; } }
   div.main section.header {
