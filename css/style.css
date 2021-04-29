@@ -124,6 +124,8 @@ p, span, div, ul {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5; }
+  p:not(:last-child), span:not(:last-child), div:not(:last-child), ul:not(:last-child) {
+    margin-bottom: .5rem; }
 
 html {
   height: 100%;
