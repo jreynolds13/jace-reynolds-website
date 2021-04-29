@@ -278,6 +278,13 @@ div.main {
       border-bottom: 2px solid;
     }
 
+    .skills {
+      > div {
+        display: grid;
+        grid-auto-columns: repeat(2, 1fr);
+      }
+    }
+
     section.contact {
       div.social-links {
         font-size: 1.25rem;

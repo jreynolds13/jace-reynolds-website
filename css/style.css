@@ -180,6 +180,9 @@ div.main {
     margin-bottom: 0; }
   div.main section.body section h3 {
     border-bottom: 2px solid; }
+  div.main section.body .skills > div {
+    display: grid;
+    grid-auto-columns: repeat(2, 1fr); }
   div.main section.body section.contact div.social-links {
     font-size: 1.25rem; }
     @media screen and (min-width: 1025px) {
