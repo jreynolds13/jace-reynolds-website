@@ -132,6 +132,7 @@ html {
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100%; }
   @supports (display: grid) {
     body {
@@ -148,7 +149,8 @@ div.main {
   @media screen and (min-width: 1025px) {
     @supports (display: grid) {
       div.main {
-        max-width: 1024px; } } }
+        max-width: 1000px;
+        max-height: 1200px; } } }
   div.main section.header {
     display: flex;
     align-items: flex-start; }

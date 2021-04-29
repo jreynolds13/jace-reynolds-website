@@ -204,6 +204,7 @@ body {
   }
 
   justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
@@ -218,7 +219,8 @@ div.main {
 
   @media #{$break-large} {
     @supports (display: grid) {
-      max-width: 1024px;
+      max-width: 1000px;
+      max-height: 1200px;
     }
   }
 
