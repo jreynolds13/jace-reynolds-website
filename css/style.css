@@ -143,8 +143,11 @@ div.main {
   grid-template-columns: 100%;
   grid-auto-rows: min-content;
   grid-gap: 2rem;
-  max-width: 1024px;
+  max-width: 800px;
   padding: 1.25rem 1rem 1.25rem 1rem; }
+  @media screen and (min-width: 641px) {
+    div.main {
+      max-width: 1024px; } }
   div.main section.header {
     display: flex;
     align-items: flex-start; }
