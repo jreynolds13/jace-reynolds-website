@@ -320,9 +320,13 @@ div.main {
         }
 
         ul {
-          @supports not (display: grid) {
-            &:not(:last-child) {
-              margin-bottom: 1rem;
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+
+          @media screen and (min-width: 550px) {
+            @supports (display: grid) {
+              margin-bottom: 0;
             }
           }
         }
