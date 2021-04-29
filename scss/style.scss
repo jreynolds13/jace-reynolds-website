@@ -286,10 +286,6 @@ div.main {
       border-bottom: 2px solid;
     }
 
-    ul {
-      margin-bottom: 0;
-    }
-
     .skills {
       > div {
 
@@ -298,12 +294,18 @@ div.main {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 1.5rem;
+
+            ul {
+              margin-bottom: 0;
+            }
           }
         }
+      }
+    }
 
-        ul {
-
-        }
+    .work {
+      ul {
+        margin-bottom: 0;
       }
     }
 

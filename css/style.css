@@ -186,14 +186,16 @@ div.main {
     margin-bottom: 0; }
   div.main section.body section h3 {
     border-bottom: 2px solid; }
-  div.main section.body ul {
-    margin-bottom: 0; }
   @media screen and (min-width: 550px) {
     @supports (display: grid) {
       div.main section.body .skills > div {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.5rem; } } }
+        grid-gap: 1.5rem; }
+        div.main section.body .skills > div ul {
+          margin-bottom: 0; } } }
+  div.main section.body .work ul {
+    margin-bottom: 0; }
   div.main section.body section.contact div.social-links {
     font-size: 1.25rem; }
     @media screen and (min-width: 1025px) {
